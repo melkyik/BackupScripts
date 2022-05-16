@@ -1,7 +1,7 @@
 ﻿
 
 #Remove-Variable * -ErrorAction SilentlyContinue; Remove-Module *; $error.Clear(); Clear-Host
-.\MyLibrary.ps1 
+.".\MyLibrary.ps1" 
 $iniObj = Get-IniFile 'Config.ini'
 $pathToDisk = "Z:"
 $pathToBackups = $iniObj.PATHS.ArchivePath

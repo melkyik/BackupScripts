@@ -1,5 +1,28 @@
+[Console]::OutputEncoding = [System.Text.Encoding]::GetEncoding("utf-8")
+Function defConfigIni($Filename) {
+    if(!(Test-Path -Path  $Filename  )){
+        Add-Content -Path $Filename -Value "[PATHS]
+BackupPath=C:/temp/backup/
+ArchivePath=C:/temp/ProjectsArchive/
+[CREDSFTP]
+User1=admin
+pass1=pass
+user2=admin
+pass2=pass
+[CREDSWIND]
+User1=iFarm
+pass1=pass
+[TELEG]
+token=asdfasdfasdfasdfadfasdfasdfasdf
+[BITRIX]
+User=user
+pass=pass"
+        
+    } 
+}
 Function Get-IniFile ($file)       # Based on "https://stackoverflow.com/a/422529"
  {
+    defConfigIni($file)
     $ini = [ordered]@{}
 
     # Create a default section if none exist in the file. Like a java prop file.
@@ -74,6 +97,9 @@ Function Set-IniFile ($iniObject, $Path, $PrintNoSection=$false, $PreserveNonDat
 ##
 ## Set-IniFile $iniObj 'c:\myNewfile.ini' -PreserveNonData $false
 ##
+
+
+
 
 #================== функция отправки телеги
 function Send-Telegram ($message) {
@@ -163,9 +189,9 @@ try{
 }#try
 catch
 {
- Send-Telegram( "Скрипт загрузки рецептов: 
- Ошибка загрузки $Url")
-  Write-Host 'Downloading $Url Failed!!'
+    .\SendTelegram.ps1 -message "Скрипт загрузки рецептов: 
+    Ошибка загрузки $Url"
+     Write-Host "Downloading $Url Failed!!"
 }
 }
 #функция загрузки через powershell 
@@ -185,8 +211,9 @@ Write-Host "Downloading $inName ip: $url"
 Copy-Item   $localpath -Destination $targetpath -Recurse -force  -FromSession $fsession  
 }
 catch {
-Send-Telegram("Скрипт загрузки Проектов: 
- Ошибка загрузки проекта $inName ip: $Url")
+.\SendTelegram.ps1 -message "Скрипт загрузки Проектов: 
+ Ошибка загрузки проекта $inName ip: $Url"
+
 
 Write-Host "COPY FAIL! $inName ip: $url"
 }

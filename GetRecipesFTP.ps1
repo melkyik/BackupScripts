@@ -1,6 +1,6 @@
 ﻿
 #вызовем  библиотеку s
-.\MyLibrary.ps1 
+. ".\MyLibrary.ps1"
 $iniObj = Get-IniFile 'Config.ini'
 
 
@@ -51,7 +51,11 @@ DownloadFtpDirectory $url $credentials1 $targetdir"Etnomir FU1"
 $url = "ftp://10.10.19.31/PlcLogic/json/"
 DownloadFtpDirectory $url $credentials1 $targetdir"Etnomir FU2"
 
+$url = "ftp://10.10.21.30/PlcLogic/json/"
+DownloadFtpDirectory $url $credentials1 $targetdir"Piter FU1"
 
+$url = "ftp://10.10.21.31/PlcLogic/json/"
+DownloadFtpDirectory $url $credentials1 $targetdir"Piter FU2"
 
 
 if(!(Test-Path -Path $archivepath)){
@@ -61,4 +65,4 @@ if(!(Test-Path -Path $archivepath)){
 $strdatetime =Get-Date -Format "yyyy-MM-dd_HH-mm"
 
 Compress-Archive -DestinationPath $archivepath"RecipesBackup_$strdatetime" -Path $targetdir*
-Remove-Item -Path $targetdir* -recurse
+if($targetdir -ne "") { Remove-Item -Path $targetdir* -recurse}

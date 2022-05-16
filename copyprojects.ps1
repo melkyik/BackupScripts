@@ -22,7 +22,7 @@
 # .\Add-TrustedHost.ps1 10.10.19.20
 # .\Add-TrustedHost.ps1 10.10.21.20
 
-Import-Module ".\MyLibrary.psm1" 
+.".\MyLibrary.ps1" 
 
 $iniObj = Get-IniFile "Config.ini"
  
@@ -44,7 +44,7 @@ DownloadProjectDirectory "Финляндия" 10.10.4.20 $wnduser1 $wndpass1 "C:
 DownloadProjectDirectory "Швейцария" 10.10.12.20 $wnduser1 $wndpass1 "C:\Users\iFarm\Documents\Simple-Scada 2\Projects\yasai" $pathcopyto
 DownloadProjectDirectory "Миасс" 10.10.20.20 $wnduser1 $wndpass1 "C:\Users\iFarm\Documents\Simple-Scada 2\Projects\miass" $pathcopyto
 DownloadProjectDirectory "Этномир" 10.10.19.20 $wnduser1 $wndpass1 "C:\Users\iFarm\Documents\Simple-Scada 2\Projects\Etnomir" $pathcopyto
-
+DownloadProjectDirectory "Питер" 10.10.21.20 $wnduser1 $wndpass1 "C:\Users\iFarm\Documents\Simple-Scada 2\Projects\Etnomir" $pathcopyto
 #копируем исходники проектов
 DownloadProjectDirectory "ПЛК Николаева" 10.10.5.20 $wnduser1 $wndpass1 "D:\!Project\Podval\*\*.pro" "$pathcopyto\Codesys\podval"
 
@@ -55,13 +55,12 @@ DownloadProjectDirectory "ПЛК Николаева" 10.10.5.20 $wnduser1 $wndpa
 #Copy-Item  'C:\Users\Администратор.SERVER\Documents\Simple-Scada 2\Projects\' -Destination "$pathcopyto\Cloud\" -Recurse -force #локальный проект
 
 $strdatetime =Get-Date -Format "yyyy-MM-dd_HH-mm"
-if(!(Test-Path -Path $targetpath )){
-    New-Item -ItemType directory -Path $targetpath
+if(!(Test-Path -Path $archivepath )){
+    New-Item -ItemType directory -Path $archivepath
 } 
 Compress-Archive -DestinationPath $archivepath"ProjectScada_$strdatetime" -Path $pathcopyto\*
 
 $wnduser1=""
 $wndpass1=""
-
-Remove-Item -Path $pathcopyto\* -recurse
+if($pathcopyto -ne "") {Remove-Item -Path $pathcopyto\* -recurse}
 
