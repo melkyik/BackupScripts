@@ -1,5 +1,5 @@
 ﻿
-#вызовем  библиотеку
+#вызовем  библиотеку s
 .\MyLibrary.ps1 
 $iniObj = Get-IniFile 'Config.ini'
 
