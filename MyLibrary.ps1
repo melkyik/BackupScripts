@@ -189,8 +189,8 @@ try{
 }#try
 catch
 {
-    .\SendTelegram.ps1 -message "Скрипт загрузки рецептов: 
-    Ошибка загрузки $Url"
+    .\SendTelegram.ps1 -message "Loading recipes script: 
+    Error loading project $Url"
      Write-Host "Downloading $Url Failed!!"
 }
 }
@@ -211,8 +211,8 @@ Write-Host "Downloading $inName ip: $url"
 Copy-Item   $localpath -Destination $targetpath -Recurse -force  -FromSession $fsession  
 }
 catch {
-.\SendTelegram.ps1 -message "Скрипт загрузки Проектов: 
- Ошибка загрузки проекта $inName ip: $Url"
+.\SendTelegram.ps1 -message "Loading scada progects script: 
+ Error loading project $inName ip: $Url"
 
 
 Write-Host "COPY FAIL! $inName ip: $url"
