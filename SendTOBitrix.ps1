@@ -5,8 +5,8 @@
 $iniObj = Get-IniFile 'Config.ini'
 $pathToDisk = "Z:"
 $pathToBackups = $iniObj.PATHS.ArchivePath
-
-
+$birtixUser=$iniObj.BITRIX.user
+$birtixpass=$iniObj.BITRIX.pass
 
 
 try
@@ -15,7 +15,7 @@ try
        if (-Not([System.IO.Directory]::Exists($pathToDisk)))
         {
             Write-Host "Mounting Disk"
-            net use Z: "https://ifarmproject.bitrix24.ru/extranet/contacts/personal/user/340/disk/path/BackUp/" /User:$iniObj.BITRIX.user $iniObj.BITRIX.pass
+            net use Z: "https://ifarmproject.bitrix24.ru/extranet/contacts/personal/user/340/disk/path/BackUp/" /User:$birtixUser $birtixpass
         }
         
         Start-Sleep -s 2
