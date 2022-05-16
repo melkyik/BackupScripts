@@ -9,10 +9,10 @@ $bot_token = $iniObj.TELEG.token
 $uri = "https://api.telegram.org/bot$bot_token/sendMessage"
 
 $id = "345821176" #повторить для каждого получателя
-Invoke-WebRequest -Method Post -Uri $uri -ContentType "application/json;charset=utf-8" `
+Invoke-WebRequest -Method Post -Uri $uri -ContentType "application/json;charset=utf-8" 
 -Body (ConvertTo-Json -Compress -InputObject @{chat_id=$id; text=$message})
 
 $id = "400374928"
-Invoke-WebRequest -Method Post -Uri $uri -ContentType "application/json;charset=utf-8" `
+Invoke-WebRequest -Method Post -Uri $uri -ContentType "application/json;charset=utf-8" 
 -Body (ConvertTo-Json -Compress -InputObject @{chat_id=$id; text=$message})
 
