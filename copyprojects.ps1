@@ -22,7 +22,7 @@
 # .\Add-TrustedHost.ps1 10.10.19.20
 # .\Add-TrustedHost.ps1 10.10.21.20
 
-.".\MyLibrary.ps1" 
+Import-Module ".\MyLibrary.psm1" 
 
 $iniObj = Get-IniFile "Config.ini"
  
