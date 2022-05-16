@@ -57,6 +57,9 @@ DownloadFtpDirectory $url $credentials1 $targetdir"Piter FU1"
 $url = "ftp://10.10.21.31/PlcLogic/json/"
 DownloadFtpDirectory $url $credentials1 $targetdir"Piter FU2"
 
+$url = "ftp://10.10.15.31/PlcLogic/json/"
+DownloadFtpDirectory $url $credentials1 $targetdir"FRANCE"
+
 
 if(!(Test-Path -Path $archivepath)){
     New-Item -ItemType directory -Path  $archivepath
