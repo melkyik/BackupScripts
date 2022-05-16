@@ -211,7 +211,7 @@ Write-Host "Downloading $inName ip: $url"
 Copy-Item   $localpath -Destination $targetpath -Recurse -force  -FromSession $fsession  
 }
 catch {
-.\SendTelegram.ps1 -message "Loading scada progects script: 
+.\SendTelegram.ps1 -message "Loading scada projects script: 
  Error loading project $inName ip: $Url"
 
 
