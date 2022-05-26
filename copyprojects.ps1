@@ -8,8 +8,8 @@
 
 #выполнить у нас под админской PS нижеприведенный скрипт. Он делает set-item wsman:localhost\client\trustedhosts -value  но с добавлением в конец. 
 #на основной машине должно быть много ИП разрешенных на удаленной не обязательно.
-#.\Add-TrustedHost.ps1 10.10.9.20
-#проверка Enter-PSSession -ComputerName 10.10.9.21 -Credential (Get-Credential)
+#.\Add-TrustedHost.ps1 10.10.9.20Enter-PSSession -ComputerName 10.10.9.21 -Credential (Get-Credential)
+#проверка 
 #или
 #$cn = read-host 'ip?';  Enter-PSSession -ComputerName $cn -Credential (Get-Credential)
 # .\Add-TrustedHost.ps1 10.10.9.21 
