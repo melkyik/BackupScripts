@@ -12,15 +12,15 @@
 #проверка 
 #или
 #$cn = read-host 'ip?';  Enter-PSSession -ComputerName $cn -Credential (Get-Credential)
-# .\Add-TrustedHost.ps1 10.10.9.21 
-# .\Add-TrustedHost.ps1 10.10.11.20
-# .\Add-TrustedHost.ps1 10.10.7.20
-# .\Add-TrustedHost.ps1 10.10.8.20
-# .\Add-TrustedHost.ps1 10.10.4.20
-# .\Add-TrustedHost.ps1 10.10.12.20
-# .\Add-TrustedHost.ps1 10.10.20.20
-# .\Add-TrustedHost.ps1 10.10.19.20
-# .\Add-TrustedHost.ps1 10.10.21.20
+# .\Add-TrustedHost.ps1 10.10.9.21 ;`
+# .\Add-TrustedHost.ps1 10.10.11.20 ;`
+# .\Add-TrustedHost.ps1 10.10.7.20;`
+# .\Add-TrustedHost.ps1 10.10.8.20;`
+# .\Add-TrustedHost.ps1 10.10.4.20;`
+# .\Add-TrustedHost.ps1 10.10.12.20;`
+# .\Add-TrustedHost.ps1 10.10.20.20;`
+# .\Add-TrustedHost.ps1 10.10.19.20;`
+# .\Add-TrustedHost.ps1 10.10.21.20;`
 
 .".\MyLibrary.ps1" 
 
