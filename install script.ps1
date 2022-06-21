@@ -1,9 +1,18 @@
+#1 часть создание юзера
+New-LocalUser -Name "iFarm"`
+ -Password (ConvertTo-SecureString -String "123456789" -AsPlainText -Force) `
+ -PasswordNeverExpires `
+ -Description "IFarm operator"; `
+Enable-LocalUser -name "iFarm"; ` 
+Add-LocalGroupMember -Group администраторы -Member "iFarm"; ` 
 Set-NetFirewallRule -name vm-monitoring-icmpv4 -Enabled true;`
+Set-ExecutionPolicy Bypass -Scope Process -Force; 
+#под новым пользователем
 $uname = [System.Environment]::UserName;`
-Set-ExecutionPolicy Bypass -Scope Process -Force; `
+Set-ExecutionPolicy Bypass -Scope Process -Force;`
 [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; `
 iex ((New-Object System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1')); `
-Invoke-WebRequest -URI "https://simple-scada.com/downloads/255000_426A5714-9647-4A97-808D/Simple-Scada%202.5.13.0.exe" `
+Invoke-WebRequest -URI "https://asu.ifarmproject.ru/s/Nedw6G93jJZKQdL/download" `
 -outfile "C:\Users\$uname\Downloads\simplescada.exe";`
 cd "C:\Users\$uname\Downloads\"; `
 .\simplescada.exe /VERYSILENT /TYPE="Full"`
@@ -18,6 +27,9 @@ cd "C:\Users\$uname\Downloads\"; `
 Invoke-WebRequest -URI "https://cloud.azcltd.com/index.php/s/MkWLtpM8C6ZsEXL/download" `
 -outfile "C:\Users\$uname\Downloads\env-installer.zip";`
 cd "C:\Users\$uname\Downloads\"; `
-Expand-Archive -Path "C:\Users\$uname\Downloads\env-installer.zip"  -DestinationPath "C:\$uname\ifarm\Downloads" -Force;
+Expand-Archive -Path "C:\Users\$uname\Downloads\env-installer.zip"  -DestinationPath "C:\users\$uname\Downloads" -Force;
 cd "C:\Users\$uname\Downloads\env-installer";.\install.bat;
-cinst -y 7zip firefox doublecmd libreoffice ;  
+cinst -y 7zip firefox doublecmd  ;  
+
+
+
