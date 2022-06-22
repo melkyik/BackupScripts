@@ -5,17 +5,18 @@ New-LocalUser -Name "iFarm"`
  -Description "IFarm operator"; `
 Enable-LocalUser -name "iFarm"; ` 
 Add-LocalGroupMember -Group администраторы -Member "iFarm"; ` 
-Set-NetFirewallRule -name vm-monitoring-icmpv4 -Enabled true;`
-Set-ExecutionPolicy Bypass -Scope Process -Force; 
+
 #под новым пользователем
+Set-NetFirewallRule -name vm-monitoring-icmpv4 -Enabled true;`
+Enable-PSRemoting;`
 $uname = [System.Environment]::UserName;`
 Set-ExecutionPolicy Bypass -Scope Process -Force;`
 [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; `
-iex ((New-Object System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1')); `
+iex ((New-Object System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1'));`
 Invoke-WebRequest -URI "https://asu.ifarmproject.ru/s/Nedw6G93jJZKQdL/download" `
 -outfile "C:\Users\$uname\Downloads\simplescada.exe";`
 cd "C:\Users\$uname\Downloads\"; `
-.\simplescada.exe /VERYSILENT /TYPE="Full"`
+.\simplescada.exe /VERYSILENT /TYPE="Full";`
 Invoke-WebRequest -URI "https://asu.ifarmproject.ru/s/xtab3oKzJ5zkxRb/download" `
 -outfile "C:\Users\$uname\Downloads\eSearch_Utility_setup_Windows_v126.exe";`
 cd "C:\Users\$uname\Downloads\"; `
@@ -27,9 +28,7 @@ cd "C:\Users\$uname\Downloads\"; `
 Invoke-WebRequest -URI "https://cloud.azcltd.com/index.php/s/MkWLtpM8C6ZsEXL/download" `
 -outfile "C:\Users\$uname\Downloads\env-installer.zip";`
 cd "C:\Users\$uname\Downloads\"; `
-Expand-Archive -Path "C:\Users\$uname\Downloads\env-installer.zip"  -DestinationPath "C:\users\$uname\Downloads" -Force;
-cd "C:\Users\$uname\Downloads\env-installer";.\install.bat;
-cinst -y 7zip firefox doublecmd  ;  
-
-
+Expand-Archive -Path "C:\Users\$uname\Downloads\env-installer.zip"  -DestinationPath "C:\users\$uname\Downloads" -Force;`
+cd "C:\Users\$uname\Downloads\env-installer";.\install.bat;`
+cinst -y 7zip firefox doublecmd   
 
