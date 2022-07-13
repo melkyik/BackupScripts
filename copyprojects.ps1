@@ -45,7 +45,7 @@ DownloadProjectDirectory "Швейцария" 10.10.12.20 $wnduser1 $wndpass1 "C
 DownloadProjectDirectory "Миасс" 10.10.20.20 $wnduser1 $wndpass1 "C:\Users\iFarm\Documents\Simple-Scada 2\Projects\miass" $pathcopyto
 DownloadProjectDirectory "Этномир" 10.10.19.20 $wnduser1 $wndpass1 "C:\Users\iFarm\Documents\Simple-Scada 2\Projects\Etnomir" $pathcopyto
 DownloadProjectDirectory "Питер" 10.10.21.20 $wnduser1 $wndpass1 "C:\Users\iFarm\Documents\Simple-Scada 2\Projects\Peterburg" $pathcopyto
-#DownloadProjectDirectory "Франция" 10.10.15.20 $wnduser1 $wndpass1 "C:\Users\iFarm.DESKTOP-IOITOEP\Documents\Simple-Scada 2\Projects\capsum" $pathcopyto
+DownloadProjectDirectory "Франция" 10.10.15.20 $wnduser1 $wndpass1 "C:\Users\iFarm.DESKTOP-IOITOEP\Documents\Simple-Scada 2\Projects\capsum" $pathcopyto
 #копируем исходники проектов
 DownloadProjectDirectory "ПЛК Николаева" 10.10.5.20 $wnduser1 $wndpass1 "D:\!Project\Podval\*\*.pro" "$pathcopyto\Codesys\podval"
 
