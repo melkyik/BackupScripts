@@ -2,10 +2,9 @@
 New-LocalUser -Name "iFarm"`
  -Password (ConvertTo-SecureString -String "123456789" -AsPlainText -Force) `
  -PasswordNeverExpires `
- -Description "IFarm operator"; `
-Enable-LocalUser -name "iFarm"; ` 
-Add-LocalGroupMember -Group администраторы -Member "iFarm"; ` 
-
+ -Description "IFarm operator";`
+Add-LocalGroupMember -Group администраторы -Member "iFarm";`
+Enable-LocalUser -name "iFarm";`
 #под новым пользователем
 Set-NetFirewallRule -name vm-monitoring-icmpv4 -Enabled true;`
 Enable-PSRemoting;`

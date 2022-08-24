@@ -40,12 +40,13 @@ DownloadProjectDirectory "Внуково BIG" 10.10.9.21 $wnduser1 $wndpass1 "C:
 DownloadProjectDirectory "Красноярск" 10.10.11.20 $wnduser1 $wndpass1 "C:\Users\iFarm\Documents\Simple-Scada 2\Projects\kras200" $pathcopyto
 DownloadProjectDirectory "Флакон" 10.10.7.20 $wnduser1 $wndpass1 "C:\Users\iFarm\Documents\Simple-Scada 2\Projects\Msk" $pathcopyto
 DownloadProjectDirectory "Иркутск" 10.10.8.20 $wnduser1 $wndpass1 "C:\Users\iFarm\Documents\Simple-Scada 2\Projects\Irk" $pathcopyto
-DownloadProjectDirectory "Финляндия" 10.10.4.20 $wnduser1 $wndpass1 "C:\Users\iFarm\Documents\Simple-Scada 2\Projects\Fin" $pathcopyto
+#DownloadProjectDirectory "Финляндия" 10.10.4.20 $wnduser1 $wndpass1 "C:\Users\iFarm\Documents\Simple-Scada 2\Projects\Fin" $pathcopyto
 DownloadProjectDirectory "Швейцария" 10.10.12.20 $wnduser1 $wndpass1 "C:\Users\iFarm\Documents\Simple-Scada 2\Projects\yasai" $pathcopyto
 DownloadProjectDirectory "Миасс" 10.10.20.20 $wnduser1 $wndpass1 "C:\Users\iFarm\Documents\Simple-Scada 2\Projects\miass" $pathcopyto
 DownloadProjectDirectory "Этномир" 10.10.19.20 $wnduser1 $wndpass1 "C:\Users\iFarm\Documents\Simple-Scada 2\Projects\Etnomir" $pathcopyto
 DownloadProjectDirectory "Питер" 10.10.21.20 $wnduser1 $wndpass1 "C:\Users\iFarm\Documents\Simple-Scada 2\Projects\Peterburg" $pathcopyto
 DownloadProjectDirectory "Франция" 10.10.15.20 $wnduser1 $wndpass1 "C:\Users\iFarm.DESKTOP-IOITOEP\Documents\Simple-Scada 2\Projects\capsum" $pathcopyto
+DownloadProjectDirectory "Благовещенск" 10.10.22.20 $wnduser1 $wndpass1 "C:\Users\iFarm\Documents\Simple-Scada 2\Projects\blag" $pathcopyto
 #копируем исходники проектов
 DownloadProjectDirectory "ПЛК Николаева" 10.10.5.20 $wnduser1 $wndpass1 "D:\!Project\Podval\*\*.pro" "$pathcopyto\Codesys\podval"
 
@@ -53,7 +54,7 @@ DownloadProjectDirectory "ПЛК Николаева" 10.10.5.20 $wnduser1 $wndpa
 # if(!(Test-Path -Path "$pathcopyto\Cloud\" )){
 #    New-Item -ItemType directory -Path "$pathcopyto\Cloud\"
 # } 
-#Copy-Item  'C:\Users\Администратор.SERVER\Documents\Simple-Scada 2\Projects\' -Destination "$pathcopyto\Cloud\" -Recurse -force #локальный проект
+Copy-Item  'C:\Users\Администратор.SERVER\Documents\Simple-Scada 2\Projects\' -Destination "$pathcopyto\Cloud\" -Recurse -force #локальный проект
 
 $strdatetime =Get-Date -Format "yyyy-MM-dd_HH-mm"
 if(!(Test-Path -Path $archivepath )){
