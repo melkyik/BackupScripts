@@ -23,8 +23,8 @@ DownloadFtpDirectory $url $credentials $targetdir"podval"
 #$url = "ftp://10.10.1.30/PlcLogic/lcLogic/AllRecipes/"
 #DownloadFtpDirectory $url $credentials $targetdir"lexus"
 
-$url = "ftp://10.10.4.30/PlcLogic/lcLogic/AllRecipes/"
-DownloadFtpDirectory $url $credentials $targetdir"fin"
+#$url = "ftp://10.10.4.30/PlcLogic/lcLogic/AllRecipes/"
+#DownloadFtpDirectory $url $credentials $targetdir"fin"
 
 $url = "ftp://10.10.8.30/PlcLogic/lcLogic/AllRecipes/"
 DownloadFtpDirectory $url $credentials $targetdir"irk"
