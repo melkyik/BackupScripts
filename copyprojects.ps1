@@ -36,8 +36,8 @@ if(!(Test-Path -Path "$pathcopyto" )){
  } 
 
 #вызов функции параметры  имя        ип          юзер    пароль       путь удаленной машины                 наш путь
-DownloadProjectDirectory "Внуково BIG" 10.10.9.21 $wnduser1 $wndpass1 "C:\Users\iFarm\Documents\Simple-Scada 2\Projects\vnukovo_big" $pathcopyto
-DownloadProjectDirectory "Красноярск" 10.10.11.20 $wnduser1 $wndpass1 "C:\Users\iFarm\Documents\Simple-Scada 2\Projects\kras200" $pathcopyto
+DownloadProjectDirectory "Внуково BIG" 10.10.9.21 $wnduser1 $wndpass1 "C:\Users\iFarm\Documents\Simple-Scada 2\Projects\vnukovo_big_REC" $pathcopyto
+DownloadProjectDirectory "Красноярск" 10.10.11.20 $wnduser1 $wndpass1 "C:\Users\iFarm\Documents\Simple-Scada 2\Projects\kras200_REC" $pathcopyto
 DownloadProjectDirectory "Флакон" 10.10.7.20 $wnduser1 $wndpass1 "C:\Users\iFarm\Documents\Simple-Scada 2\Projects\Msk" $pathcopyto
 DownloadProjectDirectory "Иркутск" 10.10.8.20 $wnduser1 $wndpass1 "C:\Users\iFarm\Documents\Simple-Scada 2\Projects\Irk" $pathcopyto
 #DownloadProjectDirectory "Финляндия" 10.10.4.20 $wnduser1 $wndpass1 "C:\Users\iFarm\Documents\Simple-Scada 2\Projects\Fin" $pathcopyto
