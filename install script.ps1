@@ -12,7 +12,7 @@ $uname = [System.Environment]::UserName;`
 Set-ExecutionPolicy Bypass -Scope Process -Force;`
 [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; `
 iex ((New-Object System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1'));`
-Invoke-WebRequest -URI "https://asu.ifarmproject.ru/s/Nedw6G93jJZKQdL/download" `
+Invoke-WebRequest -URI "https://asu.ifarmproject.ru/s/E2B6qsk7xKEMPjX/download" `
 -outfile "C:\Users\$uname\Downloads\simplescada.exe";`
 cd "C:\Users\$uname\Downloads\"; `
 .\simplescada.exe /VERYSILENT /TYPE="Full";`
