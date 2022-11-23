@@ -230,4 +230,40 @@ function ConvertTo-Encoding ([string]$From, [string]$To){
         $encTo.GetString($bytes)
     }
 }
+<#загрузка файла на удаленную машину 
+пример
+.".\MyLibrary.ps1" 
+$wnduser1 = "ifarm"
+$wndpass1="123456789"
+$targetfile="C:\Users\Администратор.SERVER\Downloads\Simple-Scada 2.6.3.3.exe" 
+$remotepath="C:\Users\ifarm\Downloads"
+ 
+UploadFile "Внуково BIG" 10.10.9.21 $wnduser1 $wndpass1 $targetfile  $remotepath
+UploadFile "Красноярск" 10.10.11.20 $wnduser1 $wndpass1 $targetfile  $remotepath
+UploadFile "Флакон" 10.10.7.20 $wnduser1 $wndpass1 $targetfile  $remotepath
+UploadFile "Иркутск" 10.10.8.20 $wnduser1 $wndpass1 $targetfile  $remotepath
+UploadFile "Швейцария" 10.10.12.20 $wnduser1 $wndpass1 $targetfile  $remotepath
+UploadFile "Миасс" 10.10.20.20 $wnduser1 $wndpass1 $targetfile $remotepath
+UploadFile "Этномир" 10.10.19.20 $wnduser1 $wndpass1 $targetfile $remotepath
+UploadFile "Питер" 10.10.21.20 $wnduser1 $wndpass1 $targetfile $remotepath
+UploadFile "Благовещенск" 10.10.22.20 $wnduser1 $wndpass1 $targetfile $remotepath
+UploadFile "Франция" 10.10.15.20 $wnduser1 $wndpass1 $targetfile  "C:\Users\iFarm.DESKTOP-IOITOEP\downloads"
+UploadFile "GreenBasket" 10.10.23.20 $wnduser1 $wndpass1 $targetfile  $remotepath
+#>
+function UploadFile($inName, $url, $inlogin, $inPassword, $localpath, $targetpath)
+{ 
+$fPass = convertto-securestring -AsPlainText -Force -String $inPassword 
+$fcred = new-object -typename System.Management.Automation.PSCredential -argumentlist $inlogin,$fPass
 
+
+try {
+Write-Host "Connecting $inName ip: $url"
+$fsession = new-pssession -computername $url -credential $fCred
+Write-Host "Downloading $inName ip: $url"
+Copy-Item   $localpath -Destination $targetpath -Recurse -force  -ToSession $fsession  
+
+}
+catch {
+Write-Host "COPY FAIL! $inName ip: $url"
+}
+}
