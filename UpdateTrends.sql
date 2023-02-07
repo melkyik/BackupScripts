@@ -7,7 +7,7 @@ BEGIN
   DECLARE trsec 	CURSOR FOR SELECT `id`,`Timestamp` FROM trends_data 	WHERE `Timestamp` >= DATE_SUB(CURRENT_TIMESTAMP(3), INTERVAL 5 MINUTE) ;
   DECLARE trmin 	CURSOR FOR SELECT `id`,`Timestamp` FROM trends_minute WHERE `Timestamp` >= DATE_SUB(CURRENT_TIMESTAMP(3), INTERVAL 5 MINUTE) ;
   DECLARE trhour 	CURSOR FOR SELECT `id`,`Timestamp` FROM trends_hour 	WHERE `Timestamp` >= DATE_SUB(CURRENT_TIMESTAMP(3), INTERVAL 5 MINUTE) ;
-  DECLARE trday 	CURSOR FOR SELECT `id`,`Timestamp` FROM trends_day 	WHERE `Timestamp` >= DATE_SUB(CURRENT_TIMESTAMP(3), INTERVAL 5 MINUTE) ;
+  DECLARE trday 	CURSOR FOR SELECT `id`,`Timestamp` FROM trends_day 	  WHERE `Timestamp` >= DATE_SUB(CURRENT_TIMESTAMP(3), INTERVAL 5 MINUTE) ;
   
   
   DECLARE mdata CURSOR FOR SELECT  `Timestamp`, GroupID, MessageID, FROM messages_data WHERE `Timestamp` >= DATE_SUB(CURRENT_TIMESTAMP(3), INTERVAL 5 MINUTE) ;
