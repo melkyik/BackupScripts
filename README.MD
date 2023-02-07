@@ -17,3 +17,10 @@ token=asdfasdfasdfasdfadfasdfasdfasdf
 [BITRIX]
 User=user
 pass=pass
+
+
+
+MyLibrary.ps1 - библиотека с разными функциями чтение файлла ини, копирование удаленного пути , фтп , отсылка телеги
+GetRecipesFTP.ps1  - грузит данные с контроллеров для создания архива с бакапами
+Add-TrustedHost.ps1 - добавляет доверенный хост для PSremoting
+SendTOBitrix.ps1 - скрипт отсылки архивов в битрикс SendTelegram.ps1 - отсылка телеграмм с командной строки

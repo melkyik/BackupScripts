@@ -1,6 +1,7 @@
 [Console]::OutputEncoding = [System.Text.Encoding]::GetEncoding("utf-8")
 Function defConfigIni($Filename) {
     if(!(Test-Path -Path  $Filename  )){
+        Write-Host "Создан Файл $Filename по умолчанию!"
         Add-Content -Path $Filename -Value "[PATHS]
 BackupPath=C:/temp/backup/
 ArchivePath=C:/temp/ProjectsArchive/
@@ -116,9 +117,6 @@ $id = "345821176" #повторить для каждого получателя
 Invoke-WebRequest -Method Post -Uri $uri -ContentType "application/json;charset=utf-8" `
 -Body (ConvertTo-Json -Compress -InputObject @{chat_id=$id; text=$message})
 
-$id = "400374928"
-Invoke-WebRequest -Method Post -Uri $uri -ContentType "application/json;charset=utf-8" `
--Body (ConvertTo-Json -Compress -InputObject @{chat_id=$id; text=$message})
 }
 
 
@@ -189,8 +187,8 @@ try{
 }#try
 catch
 {
-    .\SendTelegram.ps1 -message "Loading recipes script: 
-    Error loading project $Url"
+    Send-Telegram ("Loading recipes script: 
+    Error loading project $Url")
      Write-Host "Downloading $Url Failed!!"
 }
 }
@@ -211,8 +209,8 @@ Write-Host "Downloading $inName ip: $url"
 Copy-Item   $localpath -Destination $targetpath -Recurse -force  -FromSession $fsession  
 }
 catch {
-.\SendTelegram.ps1 -message "Loading scada projects script: 
- Error loading project $inName ip: $Url"
+    Send-Telegram ( "Loading scada projects script: 
+ Error loading project $inName ip: $Url")
 
 
 Write-Host "COPY FAIL! $inName ip: $url"
@@ -234,7 +232,7 @@ function ConvertTo-Encoding ([string]$From, [string]$To){
 пример
 .".\MyLibrary.ps1" 
 $wnduser1 = "ifarm"
-$wndpass1="123456789"
+$wndpass1="pass"
 $targetfile="C:\Users\Администратор.SERVER\Downloads\Simple-Scada 2.6.3.3.exe" 
 $remotepath="C:\Users\ifarm\Downloads"
  
