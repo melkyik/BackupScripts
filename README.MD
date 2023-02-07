@@ -1,6 +1,6 @@
 Пример файла Config.ini
 
-
+```
 [PATHS]
 BackupPath=C:/temp/backup/
 ArchivePath=C:/temp/ProjectsArchive/
@@ -17,10 +17,10 @@ token=asdfasdfasdfasdfadfasdfasdfasdf
 [BITRIX]
 User=user
 pass=pass
+```
 
 
-
-MyLibrary.ps1 - библиотека с разными функциями чтение файлла ини, копирование удаленного пути , фтп , отсылка телеги
-GetRecipesFTP.ps1  - грузит данные с контроллеров для создания архива с бакапами
-Add-TrustedHost.ps1 - добавляет доверенный хост для PSremoting
-SendTOBitrix.ps1 - скрипт отсылки архивов в битрикс SendTelegram.ps1 - отсылка телеграмм с командной строки
+-  <b>MyLibrary.ps1</b> - библиотека с разными функциями чтение файлла ini, копирование удаленного пути , фтп , отсылка телеги
+-  <b>GetRecipesFTP.ps1</b>   - грузит данные с контроллеров для создания архива с бакапами
+-  <b>Add-TrustedHost.ps1</b>  - добавляет доверенный хост для PSremoting
+-  <b>SendTOBitrix.ps1</b>  - скрипт отсылки архивов в битрикс SendTelegram.ps1 - отсылка телеграмм с командной строки
