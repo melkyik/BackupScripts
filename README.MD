@@ -1,3 +1,9 @@
+Скрипты копирования файлов через powershell и ftp  и их архивация
+##FEATURES:
+
+Progress bar, потоковое сжатие, TAR.GZ инкрементный архив
+##REQUIREMENTS:
+
 Пример файла Config.ini
 
 ```
