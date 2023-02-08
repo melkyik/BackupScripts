@@ -33,3 +33,4 @@ pass=pass
 -  <b>GetRecipesFTP.ps1</b>   - грузит данные с контроллеров для создания архива с бакапами
 -  <b>Add-TrustedHost.ps1</b>  - добавляет доверенный хост для PSremoting
 -  <b>SendTOBitrix.ps1</b>  - скрипт отсылки архивов в битрикс SendTelegram.ps1 - отсылка телеграмм с командной строки
+-  <b>install script.ps1</b>  - скрипт первичной установки рабочей станции 
