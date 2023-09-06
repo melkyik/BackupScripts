@@ -26,8 +26,8 @@ DownloadFtpDirectory $url $credentials $targetdir"podval"
 #$url = "ftp://10.10.4.30/PlcLogic/lcLogic/AllRecipes/"
 #DownloadFtpDirectory $url $credentials $targetdir"fin"
 
-$url = "ftp://10.10.8.30/PlcLogic/lcLogic/AllRecipes/"
-DownloadFtpDirectory $url $credentials $targetdir"irk"
+#$url = "ftp://10.10.8.30/PlcLogic/lcLogic/AllRecipes/"
+#DownloadFtpDirectory $url $credentials $targetdir"irk"
 
 $url = "ftp://10.10.11.30/PlcLogic/json/"
 DownloadFtpDirectory $url $credentials1 $targetdir"kras"
@@ -39,8 +39,8 @@ $url = "ftp://10.10.12.30/PlcLogic/json/"
 DownloadFtpDirectory $url $credentials1 $targetdir"Yasay"
 
 
-$url = "ftp://10.10.7.30/PlcLogic/lcLogic/AllRecipes/"
-DownloadFtpDirectory $url $credentials $targetdir"flakon"
+#$url = "ftp://10.10.7.30/PlcLogic/lcLogic/AllRecipes/"
+#DownloadFtpDirectory $url $credentials $targetdir"flakon"
 
 $url = "ftp://10.10.20.30/PlcLogic/json/"
 DownloadFtpDirectory $url $credentials1 $targetdir"Miass"
