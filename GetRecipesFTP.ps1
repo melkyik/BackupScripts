@@ -57,8 +57,8 @@ DownloadFtpDirectory $url $credentials1 $targetdir"FRANCE"
 
 $url = "ftp://10.10.22.30/PlcLogic/json/"
 DownloadFtpDirectory $url $credentials1 $targetdir"Blagoveshensk"
-$url = "ftp://10.10.23.30/PlcLogic/json/"
-DownloadFtpDirectory $url $credentials1 $targetdir"ErRyad"
+#$url = "ftp://10.10.23.30/PlcLogic/json/"
+#DownloadFtpDirectory $url $credentials1 $targetdir"ErRyad"
 $url = "ftp://10.10.24.30/PlcLogic/json/"
 DownloadFtpDirectory $url $credentials1 $targetdir"Spacefarm"
 
