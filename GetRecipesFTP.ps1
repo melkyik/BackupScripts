@@ -1,5 +1,5 @@
-п»ї
-#РІС‹Р·РѕРІРµРј  Р±РёР±Р»РёРѕС‚РµРєСѓ s
+
+#вызовем  библиотеку s
 . ".\MyLibrary.ps1"
 $iniObj = Get-IniFile 'Config.ini'
 
@@ -45,11 +45,6 @@ DownloadFtpDirectory $url $credentials $targetdir"flakon"
 $url = "ftp://10.10.20.30/PlcLogic/json/"
 DownloadFtpDirectory $url $credentials1 $targetdir"Miass"
 
-$url = "ftp://10.10.19.30/PlcLogic/json/"
-DownloadFtpDirectory $url $credentials1 $targetdir"Etnomir FU1"
-
-$url = "ftp://10.10.19.31/PlcLogic/json/"
-DownloadFtpDirectory $url $credentials1 $targetdir"Etnomir FU2"
 
 $url = "ftp://10.10.21.30/PlcLogic/json/"
 DownloadFtpDirectory $url $credentials1 $targetdir"Piter FU1"
@@ -62,7 +57,10 @@ DownloadFtpDirectory $url $credentials1 $targetdir"FRANCE"
 
 $url = "ftp://10.10.22.30/PlcLogic/json/"
 DownloadFtpDirectory $url $credentials1 $targetdir"Blagoveshensk"
-
+$url = "ftp://10.10.23.30/PlcLogic/json/"
+DownloadFtpDirectory $url $credentials1 $targetdir"ErRyad"
+$url = "ftp://10.10.24.30/PlcLogic/json/"
+DownloadFtpDirectory $url $credentials1 $targetdir"Spacefarm"
 
 if(!(Test-Path -Path $archivepath)){
     New-Item -ItemType directory -Path  $archivepath
