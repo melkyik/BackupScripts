@@ -12,15 +12,15 @@ $uname = [System.Environment]::UserName;`
 Set-ExecutionPolicy Bypass -Scope Process -Force;`
 [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; `
 iex ((New-Object System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1'));`
-Invoke-WebRequest -URI "https://asu.ifarmproject.ru/s/E2B6qsk7xKEMPjX/download" `
+Invoke-WebRequest -URI "https://asu.growtune.com/s/E2B6qsk7xKEMPjX/download" `
 -outfile "C:\Users\$uname\Downloads\simplescada.exe";`
 cd "C:\Users\$uname\Downloads\"; `
 .\simplescada.exe /VERYSILENT /TYPE="Full";`
-Invoke-WebRequest -URI "https://asu.ifarmproject.ru/s/xtab3oKzJ5zkxRb/download" `
+Invoke-WebRequest -URI "https://asu.growtune.com/s/xtab3oKzJ5zkxRb/download" `
 -outfile "C:\Users\$uname\Downloads\eSearch_Utility_setup_Windows_v126.exe";`
 cd "C:\Users\$uname\Downloads\"; `
 .\eSearch_Utility_setup_Windows_v126.exe /VERYSILENT /TYPE="Full";`
-Invoke-WebRequest -URI "https://asu.ifarmproject.ru/s/mjc7fgLK86iqgPs/download" `
+Invoke-WebRequest -URI "https://asu.growtune.com/s/mjc7fgLK86iqgPs/download" `
 -outfile "C:\Users\$uname\Downloads\WAGO-EthernetSettings-06.10.06.12.exe";`
 cd "C:\Users\$uname\Downloads\"; `
 .\WAGO-EthernetSettings-06.10.06.12.exe /VERYSILENT /TYPE="Full";`
